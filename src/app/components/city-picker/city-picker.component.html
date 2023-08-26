@@ -1,0 +1,12 @@
+<div class="picker_container">
+    <div class="input_add_container">
+        <h1>City:</h1>
+        <input type="text" #countryInput>
+        <button (click)="handleCountryAdd()">Add</button>
+    </div>
+    <div class="countries_container">
+        <div class="country_card" *ngFor="let country of countryList">
+            <h1 (click)="handleCountryClick(country)">{{country}}</h1>
+        </div>
+    </div>
+</div>

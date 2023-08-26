@@ -1,0 +1,40 @@
+.picker_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: solid black 1px;
+    width: 500px;
+}
+
+.input_add_container {
+    display: flex;
+    align-items: center;
+}
+
+.input_add_container input {
+    margin-left: 5px;
+}
+
+.input_add_container button {
+    margin-left: 5px;
+}
+
+.countries_container {
+    border: solid black 1px;
+    width: 80%;
+}
+
+.country_card {
+    border: solid black 1px;
+    padding: 5px;
+}
+
+.country_card h1:hover {
+    cursor: pointer;
+}
+
+.countries_container {
+
+}
