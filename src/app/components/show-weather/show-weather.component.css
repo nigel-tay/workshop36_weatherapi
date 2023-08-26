@@ -1,0 +1,11 @@
+.country_back_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.weather_details_container {
+    border: solid black 1px;
+    padding: 10px;
+}

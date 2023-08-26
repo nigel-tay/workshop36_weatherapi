@@ -10,7 +10,8 @@ import { WeatherService } from 'src/app/service/weather.service';
 })
 export class ShowWeatherComponent implements OnInit{
 
-  weatherResult!: Weather;
+  weatherResult: Weather = {weatherMain: ''};
+  q!: string;
 
   constructor(
     private wService: WeatherService,
@@ -18,7 +19,10 @@ export class ShowWeatherComponent implements OnInit{
     ) {}
 
   ngOnInit(): void {
-    let q: string = this.routerOutlet.activatedRoute.snapshot.params['country'];
-    this.wService.getWeatherFromCity(q).subscribe(v => this.weatherResult.weatherMain = v.weather.main)
+    this.q = this.routerOutlet.activatedRoute.snapshot.params['country'];
+    this.wService.getWeatherFromCity(this.q).subscribe(v => {
+      this.weatherResult.weatherMain = v.weather[0].main;
+      console.log(this.weatherResult);
+    })
   }
 }

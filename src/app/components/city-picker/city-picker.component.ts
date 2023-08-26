@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-city-picker',
@@ -10,6 +11,10 @@ export class CityPickerComponent {
 
   @ViewChild('countryInput')
   countryInput!: ElementRef;
+
+  constructor(
+    private router: Router
+  ) {}
 
   handleCountryAdd() {
     let inputCountry: string = this.countryInput.nativeElement.value;
@@ -23,5 +28,6 @@ export class CityPickerComponent {
   
   handleCountryClick(country: string) {
     console.log(country)
+    this.router.navigate(['weather', country]);
   }
 }
