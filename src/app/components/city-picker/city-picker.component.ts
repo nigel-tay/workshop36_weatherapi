@@ -12,11 +12,16 @@ export class CityPickerComponent {
   countryInput!: ElementRef;
 
   handleCountryAdd() {
-    let inputCountry: string = this.countryInput.nativeElement.inputValue;
-    console.log(inputCountry);
+    let inputCountry: string = this.countryInput.nativeElement.value;
+    if (this.countryList.some(ele => ele.toLowerCase() === inputCountry.toLowerCase())) {
+      window.alert('The country you are trying to add already exists. Try another country thanks.')
+    }
+    else {
+      this.countryList = [...this.countryList, inputCountry];
+    }
   }
   
   handleCountryClick(country: string) {
-
+    console.log(country)
   }
 }
