@@ -22,7 +22,6 @@ export class ShowWeatherComponent implements OnInit{
     this.q = this.routerOutlet.activatedRoute.snapshot.params['country'];
     this.wService.getWeatherFromCity(this.q).subscribe(v => {
       this.weatherResult.weatherMain = v.weather[0].main;
-      console.log(this.weatherResult);
     })
   }
 }
